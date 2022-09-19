@@ -1,0 +1,223 @@
+@import url("https://fonts.googleapis.com/css2?family=Abel&display=swap");
+
+.Logo {
+  width: 1rem;
+}
+
+body {
+  margin: 0;
+  background-image: url("https://cutewallpaper.org/27/background-wallpaper-for-web-pages/1700224324.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.App {
+  text-align: center;
+}
+a{
+
+  color: white !important;
+}
+a:hover{
+
+  color: blue !important;
+}
+
+.Container {
+  display: grid;
+  grid-template-columns: 40% 60%;
+  width: 50%;
+  margin: auto;
+  background-color: rgba(1, 97, 165, 0.036);
+  box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.24),
+    0 17px 50px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 1rem;
+  padding: 5rem 0px 0px 0px;
+}
+
+form {
+  border-left: 1px sold black;
+  width: 60%;
+  color: black;
+  margin: auto;
+  position: relative;
+}
+
+.login-form .group {
+  margin-bottom: 15px;
+}
+.login-form .group .label,
+.login-form .group .input,
+.login-form .group .button {
+  width: 100%;
+  color: black;
+  display: block;
+}
+
+.login-form .group .input,
+.login-form .group .button {
+  /* border: 1px solid black; */
+  padding: 15px 0px;
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.login-form .group .label {
+  color: black;
+  font-size: 12px;
+}
+.login-form .group .button {
+  background: #1161ee;
+}
+
+::placeholder {
+  color: black !important;
+  padding-left: 10px !important;
+}
+
+.hr {
+  height: 2px;
+  margin: 60px 0 50px 0;
+  background: rgba(255, 255, 255, 0.2);
+}
+/* .foot-lnk {
+  text-align: center;
+}
+
+.foot-link a{
+  
+  color:white !important;
+} */
+
+.DisplayContainer {
+  display: grid;
+  grid-template-columns: 70% 30%;
+}
+
+.DisplayContainer h1 {
+  padding-left: 2rem;
+  font-family: "Abel", sans-serif;
+}
+
+.DisplayContainer h2 {
+  padding-left: 2rem;
+  font-family: "Abel", sans-serif;
+}
+
+.Side1 {
+  /* border-right: 2px solid black; */
+  height: 100vh;
+  color: black !important;
+  /* background-color: bisque; */
+}
+
+.Side2 .Side2Wrapper {
+  display: flex;
+  padding-top: 2rem;
+}
+
+.Side2 {
+  background-color: black;
+
+  padding: 2rem;
+}
+
+.Side1BodyContainer {
+  position: fixed;
+  top: 20%;
+  left: 2%;
+  right: 32%;
+  /* bottom:50%; */
+  /* margin-right: 2rem;
+  margin-left: 2rem; */
+  /* margin-bottom: 2rem; */
+
+  background: rgba(255, 255, 255, 0.01);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(135, 12, 12, 0.348);
+  height: 70vh;
+  padding: 5re;
+}
+
+.Side1BodyContainer h1 {
+  font-size: 6rem;
+  font-family: "Abel", sans-serif;
+}
+
+.ButtonContainer {
+  position: fixed;
+  bottom: 0;
+  display: grid;
+  grid-template-columns: auto auto;
+}
+.btn-primary {
+  height: 3rem;
+  width: 100%;
+  border-radius: 0.8rem;
+}
+
+.btn-danger {
+  border: 0px !important;
+  color: black !important;
+  background-color: white !important;
+  height: 3rem;
+  width: rem;
+  border-radius: 0.8rem;
+  cursor: pointer;
+}
+
+.btn-danger:hover {
+    color: white !important;
+    background-color: grey !important;
+
+}
+
+.PreviousButton {
+  position: relative;
+  bottom: 0;
+  background-color: #b0e0f800 !important;
+}
+
+.PreviousButton:hover {
+  position: relative;
+  bottom: 0;
+  background-color: #b0e0f800 !important;
+}
+
+img {
+  height: 80vh !important;
+}
+
+.active carousel-item {
+  padding-top: 2rem !important;
+}
+
+
+ol{
+  display: flex !important;
+  list-style: none;
+}
+
+ol li {
+  background-color: grey;
+  border-right: 1px solid black !important;
+  border-left: 1px solid black !important;
+
+}
+
+ol li:hover {
+  
+  color: red !important;
+  text-decoration: underline;
+}
+
+.loginValidator{
+  text-align: center;
+  background-color: rgba(255, 0, 0, 0.392);
+  width: 50%;
+  margin:auto;
+  height: 3rem;
+}
