@@ -8,9 +8,9 @@ function ModalFullscreenExample5(props) {
 
   return (
     <div>
-      <Button color="danger" onClick={toggle}>
+      <p color="danger" onClick={toggle} className="modalButton">
         Step 5: What pet peeves do you have?
-      </Button>
+      </p>
       <Modal isOpen={modal} toggle={toggle} fullscreen>
         <ModalHeader toggle={toggle}>What pet peeves do you have?</ModalHeader>
         <ModalBody>

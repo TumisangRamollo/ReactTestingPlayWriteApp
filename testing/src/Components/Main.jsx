@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import "./App.css";
-import Contents from "./";
-import HomeNavagation from'./HomeNavigation'
-import Spinner from './Spinner'
-import axios from 'axios'
+import axios from "axios";
+import Form from "../Components/Forms";
+import SignUpForm from "../Components/SignUpForm";
+import Contents from "../Components/Contents";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
 function Main() {
   const [email, setEmail] = useState();
@@ -11,155 +11,90 @@ function Main() {
   const [validation, setValidation] = useState();
   const [show, setShow] = useState(false);
   const [values, setValues] = useState([]);
-  const [switchSignupbtn , setswitchSignupbtn] = useState(false)
-
-  // const handleChange = (e) => {
-  //   setUser({ user, [e.target.name]: e.target.value });
-  // };
-
-  // console.log('user1', user)
+  const [switchSignupbtn, setswitchSignupbtn] = useState(false);
+  const [auth, setAuth] = useState();
+  const [validatePassword, setValidatePassword] = useState();
+  const [firstname, setFirstName] = useState();
+  const [lastname, setLastName] = useState();
+  // const [auth, setAuth] = useState();
+  // const [auth, setAuth] = useState();
+  // const [auth, setAuth] = useState();
+  // const [auth, setAuth] = useState();
 
   const handleSignIn = async (e) => {
     e.preventDefault();
-    const data = {email , password }
-    const user = await axios.post("http://localhost:4002/login", data)
+    const data = { email, password };
+    const user = await axios.post("http://localhost:4003/login", data);
 
-// let foundUserDate = user.data.date
-// let foundUserEmail = user.data.foundUser.email
-// let founduserValidationMEssage = user.data.message
-console.log('user', user)
     try {
-      if (email === user.data.foundUser.email &&  email !== "") {
+      if (email === user.data.foundUser.email && email !== "") {
         setValues([values, user.data.foundUser.email, user.data.date]);
-        setswitchSignupbtn(true)
+        setswitchSignupbtn(true);
         setValidation(user.data.message);
         setTimeout(function() {
           setShow(true);
         }, 3000);
-        setEmail("")
-        setPassword("")
-      } else{
+        setEmail("");
+        setPassword("");
+        Navigate("/contents");
+      } else {
         setValidation(user.data.message);
       }
-      
-    } catch (error) {
-      
-    }
+    } catch (error) {}
   };
 
-  const handleSignUp = (_) => {
-    console.log("Sign up");
+  const handleAuth = (id) => {
+    setAuth(id);
   };
 
-  console.log("values", values);
+  const handleSignUp = async(e) => {
+e.preventDefault()
+  };
 
   return (
     <div>
-      {!show ? (
+      <Contents />
+      {/* <BrowserRouter>
         <div>
-          <HomeNavagation />
-          <br />
-          <div style={!switchSignupbtn ? {display:"none"}: {display:"block"}}>
-                    <p className="loginValidator"
-                    style={
-                      validation === "Logged in succesfully"
-                        ? { color: "green", backgroundColor:"rgba(0, 128, 0, 0.392)" }
-                        : { color: "red", backgroundColor:"rgba(255, 0, 0, 0.392)" }
-                    }
-                  >
-                    {validation}
-                  </p>
-
-          </div>
-          <div className="Container">
-            <div>
-              <div>
-                <h1
-                  style={{
-                    padding: "2rem",
-                    textAlign: "center",
-                    color: "black",
-                  }}
-                >
-                  Welcome to Tumisang presentation...
-                </h1>
-              </div>
-            </div>
-            <div class="login-form">
-              <form onSubmit={handleSignIn} class="sign-in-htm">
-                {/* <div style={{ display: "flex", gap: "20px" }}>
-              <div>
-                <input id="tab-1" type="radio" name="tab" />
-                <label for="tab-1">Sign In</label>
-              </div>
-              <div>
-                <input id="tab-2" type="radio" name="tab" />
-                <label for="tab-2" class="tab">
-                  Sign Up
-                </label>
-              </div>
-            </div> */}
-                <div class="group">
-                  <br />
-                  <label for="user" class="label">
-                    Email
-                  </label>
-                  <input
-                    name="email"
-                    type="email"
-                    class="input"
-                    onChange={(e) => setEmail(e.target.value)}
-                    value={email}
-                  />
-                </div>
-                <div class="group">
-                  <label for="pass" class="label">
-                    Password
-                  </label>
-                  <input
-                    onChange={(e) => setPassword(e.target.value)}
-                    type="password"
-                    class="input"
-                    name="password"
-                    data-type="password"
-                    value={password}
-                  />
-                </div>
-                <div class="group">
-                  <input
-                    name="isChecked"
-                    // onChange={(e) => handleChange(e)}
-                    type="checkbox"
-                    />
-                  <label for="check">Keep me Signed in</label>
-                </div>
-                    {!switchSignupbtn 
-                    ?
-                     ( <div class="group">
-                     <input type="submit" className="btn btn-primary" value="Sign In" />
-                   </div>) 
-                     :
-                      ( <Spinner />)
-                      }
-               
-               
-                <div class="hr"></div>
-                {/* <div class="foot-lnk">
-              <a href="#forgot" disabled="true">
-                Forgot Password?
-              </a>
-            </div> */}
-                <div></div>
-              </form>
-         
-            </div>
-          </div>
+          {auth !== "signIn" ? (
+            <Form
+              show={show}
+              switchSignupbtn={switchSignupbtn}
+              validation={validation}
+              handleSignIn={handleSignIn}
+              setEmail={setEmail}
+              email={email}
+              setPassword={setPassword}
+              password={password}
+              values={values}
+              handleAuth={handleAuth}
+              setAuth={setAuth}
+              auth={auth}
+            />
+          ) : (
+            <SignUpForm
+              handleAuth={handleAuth}
+              setAuth={setAuth}
+              auth={auth}
+              handleSignUp={handleSignUp}
+              firstname={firstname}
+              lastname={lastname}
+              password={password}
+              email={email}
+              validatePassword={validatePassword}
+              setEmail={setEmail}
+              setFirstName={setFirstName}
+              setLastName={setLastName}
+              setValidatePassword={setValidatePassword}
+              setPassword={setPassword}
+              switchSignupbtn={switchSignupbtn}
+            />
+          )}
+          <Routes>
+            <Route path="/contents" element={<Contents />} />
+          </Routes>
         </div>
-      ) : (
-        <div>
-          <Contents values={values} />
-        </div>
-      )}
+      </BrowserRouter> */}
     </div>
   );
 }

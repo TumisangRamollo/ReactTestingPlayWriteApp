@@ -1,12 +1,12 @@
 import React from "react";
 import Images from "./Images";
 import Modal from "./Modal";
-import Navigation from './Navigation'
+import Navigation from '../Components/Navigation'
 
 function Contents(props) {
     const {values} = props
 
-    console.log('values', values[1])
+    // console.log('values', values[1])
   return (
     <div className="DisplayContainer">
       <div className="Side1" style={{color:"black"}}>
@@ -58,7 +58,7 @@ function Contents(props) {
       <div className="Side2">
         <div className="Side2Wrapper">
           <div className="Avatar"></div>
-          <a href={values[1]} target="_blank">Email address hidden</a>
+          {/* <a href={values[1]} target="_blank">Email address hidden</a>   */}
           <br/>
           <br/>
           <h1>...</h1>

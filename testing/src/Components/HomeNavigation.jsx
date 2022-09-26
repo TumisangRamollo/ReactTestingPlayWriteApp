@@ -8,8 +8,7 @@ import {
   NavItem,
   NavLink,
 } from "reactstrap";
-import Modal from "./Modal";
-import Logo from "./Asserts/Logo2.svg";
+import Modal from "../Components/Modal";
 
 export default class Navigation extends React.Component {
   constructor(props) {

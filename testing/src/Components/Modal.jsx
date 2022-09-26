@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
-import Modal2 from "./Modal2";
+import Modal2 from "../Components/Modal2";
 
 function ModalFullscreenExample(props) {
   const [modal, setModal] = useState(false);
@@ -9,9 +9,9 @@ function ModalFullscreenExample(props) {
 
   return (
     <div>
-      <Button color="danger" onClick={toggle}>
+      <p color="danger" onClick={toggle} className="modalButton">
         Step 1: Who are you?
-      </Button>
+      </p>
       <Modal isOpen={modal} toggle={toggle} fullscreen>
         <ModalHeader toggle={toggle}>
           Who are you & where do you come from?

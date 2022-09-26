@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
-import Modal5 from "./Modal5"
+import Modal5 from "../Components/Modal5"
 
 function ModalFullscreenExample4(props) {
   const [modal, setModal] = useState(false);
@@ -9,9 +9,9 @@ function ModalFullscreenExample4(props) {
 
   return (
     <div>
-      <Button color="danger" onClick={toggle}>
+      <p color="danger" onClick={toggle} className="modalButton">
         Step 4: What pet peeves do you have?
-      </Button>
+      </p>
       <Modal isOpen={modal} toggle={toggle} fullscreen>
         <ModalHeader toggle={toggle}>
         What pet peeves do you have?
