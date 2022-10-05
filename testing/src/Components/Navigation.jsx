@@ -34,11 +34,9 @@ export default class Navigation extends React.Component {
           <Collapse isOpen={!this.state.collapsed} navbar>
             <Nav navbar>
               <NavItem>
-                <ol>
-                  <li>
+                  <li style={{fontSize:"2rem"}}>
                     <Modal />
                   </li>
-                </ol>
               </NavItem>
             </Nav>
           </Collapse>
